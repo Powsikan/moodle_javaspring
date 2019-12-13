@@ -12,12 +12,14 @@ import javax.persistence.ManyToMany;
 import com.powsikan.moodle.lecturer.Lecturer;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Course
  */
 @Data
 @Entity
+@NoArgsConstructor
 public class Course {
 
     @Id
@@ -26,7 +28,8 @@ public class Course {
 
     private String name;
 
-    @ManyToMany
-    private Set<Lecturer> lecturers;
 
+    public Course(String name) {
+        this.name = name;
+    }
 }
